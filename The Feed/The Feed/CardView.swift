@@ -21,27 +21,48 @@ struct CardView: View {
             
             
             VStack {
-                Image(uiImage: user.image)
-                    .resizable()
-                    .scaledToFit()
-                VStack(alignment: .leading) {
-                    Text(user.name)
-                        .font(.title)
-                        .foregroundColor(.primary)
-                        .fontWeight(.bold)
-                    Text(user.content)
-                        .font(.headline)
-                        .foregroundColor(.secondary)
-                    HStack {
-                        Spacer()
-                        Text(user.date)
-                            .font(.caption)
+                if user.image != "" {
+                    Image(user.image)
+                        .resizable()
+                        .scaledToFit()
+                    VStack(alignment: .leading) {
+                        Text(user.name)
+                            .font(.title)
+                            .foregroundColor(.primary)
+                            .fontWeight(.bold)
+                        Text(user.content)
+                            .font(.headline)
                             .foregroundColor(.secondary)
-                            .padding(.vertical, 5)
+                        HStack {
+                            Spacer()
+                            Text(user.date)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                                .padding(.vertical, 5)
+                        }
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 8)
+                } else {
+                    VStack(alignment: .leading) {
+                        Text(user.name)
+                            .font(.title)
+                            .foregroundColor(.primary)
+                            .fontWeight(.bold)
+                        Text(user.content)
+                            .font(.headline)
+                            .foregroundColor(.secondary)
+                        HStack {
+                            Spacer()
+                            Text(user.date)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                                .padding(.vertical, 5)
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 8)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding()
             }
         }
 //        .cornerRadius(10)
@@ -54,7 +75,7 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(user: MockUser(image: UIImage(named: "goku")!, name: "Kakaroto", content: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", date: "10/10/2002"))
+        CardView(user: MockUser(image: "goku", name: "Kakaroto", content: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", date: "10/10/2002"))
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
     }
 }

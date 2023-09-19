@@ -16,6 +16,7 @@ struct MainView: View {
             NavigationView {
                 List(mu.mockUser) { user in
                     CardView(user: user)
+                        .padding(.horizontal, -10)
                 }
                 .listStyle(.grouped)
                 .navigationTitle("The Feed")
