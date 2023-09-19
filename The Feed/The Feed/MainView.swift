@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @ObservedObject var mu = MockFeedManager()
+    
     var body: some View {
         VStack {
             NavigationView {
-                List(0..<10) { item in
-                    CardView()
+                List(mu.mockUser) { user in
+                    CardView(user: user)
                 }
                 .listStyle(.grouped)
                 .navigationTitle("The Feed")
