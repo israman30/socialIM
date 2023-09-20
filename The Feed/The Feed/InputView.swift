@@ -10,13 +10,13 @@ import SwiftUI
 struct InputView: View {
     
     @State var inputDetailText = ""
+    @State var inputTitle = ""
+    @StateObject var user = MockFeedManager()
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
             HStack {
-                Text("Think on something!")
-                    .foregroundColor(.gray)
                 Spacer()
                 Button {
                     self.dismiss()
@@ -27,16 +27,40 @@ struct InputView: View {
                 }
 
             }
+            TextField("Input a title here...", text: $inputTitle)
+                .font(.title)
+                .padding(.vertical)
+            
+            HStack {
+                Spacer()
+                Button {
+                    // Open photo library
+                } label: {
+                    Image(systemName: "photo")
+                        .foregroundColor(Color(.label))
+                }
+                .buttonStyle(.bordered)
+                
+                Button {
+                    // Open camera
+                } label: {
+                    Image(systemName: "camera")
+                        .foregroundColor(Color(.label))
+                }
+                .buttonStyle(.bordered)
+                Spacer()
+            }
             
             ZStack(alignment: .leading) {
                 TextEditor(text: $inputDetailText)
                 VStack {
                     Text("What's new...")
-                        .font(.title)
+                        .font(.title2)
                     Spacer()
                 }
                 
             }
+            .padding(.vertical)
             
         }
         .padding()
