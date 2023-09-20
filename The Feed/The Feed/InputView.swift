@@ -61,7 +61,14 @@ struct InputView: View {
                 
             }
             .padding(.vertical)
-            
+            Button {
+                // Post
+            } label: {
+                Text("Post")
+                    .font(.title)
+            }
+            .buttonStyle(.borderedProminent)
+
         }
         .padding()
     }
