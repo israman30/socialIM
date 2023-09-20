@@ -10,11 +10,24 @@ import SwiftUI
 struct InputView: View {
     
     @State var inputDetailText = ""
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
-            Text("Think on something!")
-                .foregroundColor(.gray)
+            HStack {
+                Text("Think on something!")
+                    .foregroundColor(.gray)
+                Spacer()
+                Button {
+                    self.dismiss()
+                } label: {
+                    Image(systemName: "xmark.circle")
+                        .foregroundColor(Color(.label))
+                        .font(.title3)
+                }
+
+            }
+            
             ZStack(alignment: .leading) {
                 TextEditor(text: $inputDetailText)
                 VStack {
