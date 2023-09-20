@@ -10,16 +10,34 @@ import SwiftUI
 struct MainView: View {
     
     @ObservedObject var mu = MockFeedManager()
+    @State var inputSection = false
     
     var body: some View {
         VStack {
             NavigationView {
-                List(mu.mockUser) { user in
-                    CardView(user: user)
-                        .padding(.horizontal, -10)
+                VStack {
+                    List {
+                        Text("What's new..")
+                            .foregroundColor(.gray)
+                            .font(.title3)
+                            .padding(.vertical, 10)
+                            .onTapGesture {
+                                self.inputSection.toggle()
+                            }
+                            .sheet(isPresented: $inputSection) {
+                                InputView()
+                            }
+                        
+                        ForEach(mu.mockUser) { user in
+                            CardView(user: user)
+                                .padding(.horizontal, -10)
+                        }
+                        
+                    }
+                    .listStyle(.grouped)
+                    .navigationTitle("The Feed")
                 }
-                .listStyle(.grouped)
-                .navigationTitle("The Feed")
+                
             }
         }
     }
