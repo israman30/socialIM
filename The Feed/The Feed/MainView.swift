@@ -29,7 +29,7 @@ struct MainView: View {
                         self.openPostView.toggle()
                     }
                     .sheet(isPresented: $openPostView) {
-                        EmptyView()
+                        InputPostView()
                     }
                     
                     ForEach(mu.mockUser) { post in

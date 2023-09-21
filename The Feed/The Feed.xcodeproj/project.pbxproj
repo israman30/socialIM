@@ -14,6 +14,7 @@
 		4DBD780F2AB53DB300BFA052 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD780E2AB53DB300BFA052 /* MainView.swift */; };
 		4DBD78112AB53EA500BFA052 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD78102AB53EA500BFA052 /* CardView.swift */; };
 		4DBD78132AB541F300BFA052 /* MockFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD78122AB541F300BFA052 /* MockFeedManager.swift */; };
+		4DE20A102ABCBCF3004E8340 /* InputPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE20A0F2ABCBCF3004E8340 /* InputPostView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		4DBD780E2AB53DB300BFA052 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4DBD78102AB53EA500BFA052 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		4DBD78122AB541F300BFA052 /* MockFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFeedManager.swift; sourceTree = "<group>"; };
+		4DE20A0F2ABCBCF3004E8340 /* InputPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				4DBD78002AB53D8C00BFA052 /* The_FeedApp.swift */,
 				4DBD78022AB53D8C00BFA052 /* ContentView.swift */,
 				4DBD780E2AB53DB300BFA052 /* MainView.swift */,
+				4DE20A0F2ABCBCF3004E8340 /* InputPostView.swift */,
 				4DBD78122AB541F300BFA052 /* MockFeedManager.swift */,
 				4DBD78102AB53EA500BFA052 /* CardView.swift */,
 				4DBD78042AB53D8C00BFA052 /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 				4DBD78032AB53D8C00BFA052 /* ContentView.swift in Sources */,
 				4DBD780F2AB53DB300BFA052 /* MainView.swift in Sources */,
 				4DBD78112AB53EA500BFA052 /* CardView.swift in Sources */,
+				4DE20A102ABCBCF3004E8340 /* InputPostView.swift in Sources */,
 				4DBD78132AB541F300BFA052 /* MockFeedManager.swift in Sources */,
 				4DBD78012AB53D8C00BFA052 /* The_FeedApp.swift in Sources */,
 			);
