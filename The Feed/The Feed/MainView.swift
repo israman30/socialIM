@@ -17,16 +17,23 @@ struct MainView: View {
             NavigationView {
                 VStack {
                     List {
-                        Text("What's new..")
-                            .foregroundColor(.gray)
-                            .font(.title3)
-                            .padding(.vertical, 10)
-                            .onTapGesture {
-                                self.inputSection.toggle()
-                            }
-                            .sheet(isPresented: $inputSection) {
-                                InputView()
-                            }
+                        HStack(alignment: .center) {
+                            Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")
+                                .resizable()
+                                .frame(width: 30, height: 25)
+                            Text("What's new..")
+                                .padding(.vertical, 10)
+                                .font(.title3)
+                        }
+                        .foregroundColor(.gray)
+                        .frame(width: .infinity)
+                        
+                        .onTapGesture {
+                            self.inputSection.toggle()
+                        }
+                        .sheet(isPresented: $inputSection) {
+                            InputView()
+                        }
                         
                         ForEach(mu.mockUser) { user in
                             CardView(user: user)
