@@ -14,9 +14,24 @@ struct MainView: View {
     var body: some View {
         VStack {
             NavigationView {
-                List(mu.mockUser) { user in
-                    CardView(user: user)
-                        .padding(.horizontal, -10)
+                List {
+                    HStack {
+                        Image(systemName: "pencil.tip.crop.circle.badge.arrow.forward")
+                            .font(.title)
+                            .padding(.trailing)
+                        Text("What's new...")
+                    }
+                    .padding(.vertical)
+                    .font(.title2)
+                    .foregroundColor(.gray)
+                    .onTapGesture {
+                        
+                    }
+                    
+                    ForEach(mu.mockUser) { post in
+                        CardView(user: post)
+                            .padding(.horizontal, -10)
+                    }
                 }
                 .listStyle(.grouped)
                 .navigationTitle("The Feed")
