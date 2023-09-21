@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     
     @ObservedObject var mu = MockFeedManager()
+    @State private var openPostView = false
     
     var body: some View {
         VStack {
@@ -25,7 +26,10 @@ struct MainView: View {
                     .font(.title2)
                     .foregroundColor(.gray)
                     .onTapGesture {
-                        
+                        self.openPostView.toggle()
+                    }
+                    .sheet(isPresented: $openPostView) {
+                        EmptyView()
                     }
                     
                     ForEach(mu.mockUser) { post in
