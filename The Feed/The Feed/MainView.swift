@@ -31,7 +31,7 @@ struct MainView: View {
                         self.openPostView.toggle()
                     }
                     .sheet(isPresented: $openPostView) {
-                        InputPostView(inputTitle: <#Binding<String>#>, contentTitle: <#Binding<String>#>)
+                        InputPostView()
                     }
                     
                     ForEach(mu.mockUser) { post in

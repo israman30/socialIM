@@ -9,13 +9,23 @@ import SwiftUI
 
 struct InputPostView: View {
     
-    @Binding var inputTitle: String
-    @Binding var contentTitle: String
+    @State var inputTitle = ""
+    @State var contentTitle = ""
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
-                Text("Let's see..")
+                HStack {
+                    Text("Let's see..")
+                    Spacer()
+                    Button {
+                        self.dismiss()
+                    } label: {
+                        Image(systemName: "xmark.circle")
+                            .tint(Color(.label))
+                    }
+                }
                 TextField("What is new..", text: $inputTitle)
                     .font(.title)
                 
@@ -45,9 +55,7 @@ struct InputPostView: View {
 }
 
 struct InputPostView_Previews: PreviewProvider {
-    static var inputTitle = ""
-    static var contentTitle = ""
     static var previews: some View {
-        InputPostView(inputTitle: .constant(inputTitle), contentTitle: .constant(contentTitle))
+        InputPostView()
     }
 }
