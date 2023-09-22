@@ -9,8 +9,8 @@ import SwiftUI
 
 struct InputPostView: View {
     
-    @State var inputTitle = ""
-    @State var contentTitle = ""
+    @Binding var inputTitle: String
+    @Binding var contentTitle: String
     
     var body: some View {
         VStack {
@@ -45,7 +45,9 @@ struct InputPostView: View {
 }
 
 struct InputPostView_Previews: PreviewProvider {
+    static var inputTitle = ""
+    static var contentTitle = ""
     static var previews: some View {
-        InputPostView()
+        InputPostView(inputTitle: .constant(inputTitle), contentTitle: .constant(contentTitle))
     }
 }

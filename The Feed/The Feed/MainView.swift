@@ -11,6 +11,8 @@ struct MainView: View {
     
     @ObservedObject var mu = MockFeedManager()
     @State private var openPostView = false
+    @State var inputTitle = ""
+    @State var contentTitle = ""
     
     var body: some View {
         VStack {
@@ -29,7 +31,7 @@ struct MainView: View {
                         self.openPostView.toggle()
                     }
                     .sheet(isPresented: $openPostView) {
-                        InputPostView()
+                        InputPostView(inputTitle: <#Binding<String>#>, contentTitle: <#Binding<String>#>)
                     }
                     
                     ForEach(mu.mockUser) { post in
