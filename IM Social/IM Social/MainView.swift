@@ -7,17 +7,35 @@
 
 import SwiftUI
 
+struct Message: Identifiable {
+    let id = UUID().uuidString
+    let message: String
+}
+
+class MessageViewModel: ObservableObject {
+    
+    @Published var messages = [Message]()
+    @Published var inputText = ""
+    
+    func addNewMessage(object: Message) {
+        guard !inputText.isEmpty else { return }
+        messages.append(object)
+        inputText = ""
+    }
+}
+
 struct MainView: View {
     
     @State var inputText = ""
     @State var messages = ["test 1", "test 2"]
+    @StateObject var vm = MessageViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(messages, id: \.self) { item in
-                        Text("\(item)")
+                    ForEach(vm.messages) { object in
+                        Text("\(object.message)")
                             .padding()
                             .font(.title3)
                             .background(Color.blue)
@@ -26,13 +44,13 @@ struct MainView: View {
                     }
                 }
                 .listStyle(.grouped)
+                
                 HStack {
-                    TextField("Say something..", text: $inputText)
+                    TextField("Say something..", text: $vm.inputText)
                         .padding()
                     
                     Button {
-                        // send
-                        self.addNewMessage(message: inputText)
+                        self.addNewMessage(message: vm.inputText)
                     } label: {
                         Image(systemName: "arrow.uturn.backward")
                             .padding()
@@ -46,8 +64,8 @@ struct MainView: View {
     }
     
     func addNewMessage(message: String) {
-        messages.append(message)
-        inputText = ""
+        let newMessage = Message(message: message)
+        vm.addNewMessage(object: newMessage)
     }
 }
 
