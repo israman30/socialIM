@@ -7,26 +7,6 @@
 
 import SwiftUI
 
-struct Message: Identifiable {
-    let id = UUID().uuidString
-    let sendeId = "abc"
-    let recieverId = "xyz"
-    let message: String
-}
-
-class MessageViewModel: ObservableObject {
-    
-    @Published var messages = [Message]()
-    @Published var inputText = ""
-    @Published var isLogin = false
-    
-    func addNewMessage(object: Message) {
-        guard !inputText.isEmpty else { return }
-        messages.append(object)
-        inputText = ""
-    }
-}
-
 struct MainView: View {
     
     @State var inputText = ""
