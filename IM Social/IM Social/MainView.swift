@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Message: Identifiable {
     let id = UUID().uuidString
+    let sendeId = "abc"
+    let recieverId = "xyz"
     let message: String
 }
 
@@ -16,6 +18,7 @@ class MessageViewModel: ObservableObject {
     
     @Published var messages = [Message]()
     @Published var inputText = ""
+    @Published var isLogin = false
     
     func addNewMessage(object: Message) {
         guard !inputText.isEmpty else { return }
@@ -32,38 +35,37 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                List {
-                    ForEach(vm.messages) { object in
-                        Text("\(object.message)")
-                            .padding()
-                            .font(.title3)
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(15)
+            if !vm.isLogin {
+                VStack {
+                    List {
+                        ForEach(vm.messages) { object in
+                            MessageView(object: object)
+                        }
                     }
-                }
-                .listStyle(.grouped)
-                
-                HStack {
-                    TextField("Say something..", text: $vm.inputText)
-                        .padding()
+                    .listStyle(.grouped)
                     
-                    Button {
-                        self.addNewMessage(message: vm.inputText)
-                    } label: {
-                        Image(systemName: "arrow.uturn.backward")
+                    HStack {
+                        TextField("Say something..", text: $vm.inputText)
                             .padding()
+                        
+                        Button {
+                            self.addNewMessage(message: vm.inputText)
+                        } label: {
+                            Image(systemName: "arrow.uturn.backward")
+                                .padding()
+                        }
+                        .buttonStyle(.bordered)
+                        
                     }
-                    .buttonStyle(.bordered)
-
                 }
+                .navigationTitle("IM Social")
+            } else {
+                LoginView()
             }
-            .navigationTitle("IM Social")
         }
     }
     
-    func addNewMessage(message: String) {
+    private func addNewMessage(message: String) {
         let newMessage = Message(message: message)
         vm.addNewMessage(object: newMessage)
     }
@@ -74,3 +76,4 @@ struct MainView_Preview: PreviewProvider {
         MainView()
     }
 }
+

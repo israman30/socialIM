@@ -15,6 +15,8 @@
 		4DCA24242ABE6C39005E9877 /* IM_Social.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA24222ABE6C39005E9877 /* IM_Social.xcdatamodeld */; };
 		4DCA242C2ABE6C62005E9877 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA242B2ABE6C62005E9877 /* DataController.swift */; };
 		4DCA242E2ABE6CAB005E9877 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA242D2ABE6CAB005E9877 /* MainView.swift */; };
+		4DCA24302ABE78E6005E9877 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA242F2ABE78E6005E9877 /* MessageView.swift */; };
+		4DCA24322ABFA87F005E9877 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA24312ABFA87F005E9877 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		4DCA24232ABE6C39005E9877 /* IM_Social.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IM_Social.xcdatamodel; sourceTree = "<group>"; };
 		4DCA242B2ABE6C62005E9877 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		4DCA242D2ABE6CAB005E9877 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4DCA242F2ABE78E6005E9877 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		4DCA24312ABFA87F005E9877 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +66,9 @@
 				4DCA242A2ABE6C55005E9877 /* Model */,
 				4DCA24172ABE6C38005E9877 /* IM_SocialApp.swift */,
 				4DCA24192ABE6C38005E9877 /* ContentView.swift */,
+				4DCA24312ABFA87F005E9877 /* LoginView.swift */,
 				4DCA242D2ABE6CAB005E9877 /* MainView.swift */,
+				4DCA242F2ABE78E6005E9877 /* MessageView.swift */,
 				4DCA241B2ABE6C39005E9877 /* Assets.xcassets */,
 				4DCA24202ABE6C39005E9877 /* Persistence.swift */,
 				4DCA24222ABE6C39005E9877 /* IM_Social.xcdatamodeld */,
@@ -162,6 +168,8 @@
 				4DCA24212ABE6C39005E9877 /* Persistence.swift in Sources */,
 				4DCA241A2ABE6C38005E9877 /* ContentView.swift in Sources */,
 				4DCA24242ABE6C39005E9877 /* IM_Social.xcdatamodeld in Sources */,
+				4DCA24302ABE78E6005E9877 /* MessageView.swift in Sources */,
+				4DCA24322ABFA87F005E9877 /* LoginView.swift in Sources */,
 				4DCA24182ABE6C38005E9877 /* IM_SocialApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
