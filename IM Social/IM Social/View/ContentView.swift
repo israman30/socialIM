@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import Firebase
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -15,6 +16,10 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
+    init() {
+        FirebaseApp.configure()
+    }
 
     var body: some View {
         MainView()
